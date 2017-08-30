@@ -1,0 +1,104 @@
+// add_invoice.js
+Page({
+
+  data: {
+    typeTit:["个人","单位"],
+    select:0,
+    close:true,
+    invoice: [
+      // {
+      //   "name": "adsf",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "234",
+      //   "taxNum": null,
+      //   "type": 1
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // },
+      // {
+      //   "name": "lll",
+      //   "taxNum": null,
+      //   "type": 2
+      // }
+    ]
+  },
+  onLoad: function (options) {
+    
+  },
+  SelectType:function(e){
+    console.log(e);
+    var index=e.target.dataset.index;
+    this.setData({
+      select:index
+    })
+  },
+  SelectRise:function(){
+    var that = this;
+    app.Verification(function (token) {
+      wx.request({
+        url: constract.findAllInvoice,
+        header: { token: token },
+        success: function (res) {
+          console.log(res);
+          that.setData({
+            invoice: res.data.data,
+            close: false
+          })
+
+        }
+      })
+    }); 
+  },
+  Closed:function(){
+    this.setData({
+      close: true
+    })
+  },
+  addSave:function(e){
+    console.log(e);
+    var data = e.detail.value;
+    if (!data.name) {
+      wx.showModal({
+        title: '提示',
+        content: '姓名或单位名称不能为空!',
+        showCancel: false
+      });
+      return;
+    };
+    if (data.taxNum) {
+      if (data.taxNum.length < 15) {
+        wx.showModal({
+          title: '提示',
+          content: '税号应为15-20位数字或字母!',
+          showCancel: false
+        });
+      }
+    }
+  }
+})

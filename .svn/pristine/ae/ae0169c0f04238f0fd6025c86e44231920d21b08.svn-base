@@ -1,0 +1,72 @@
+<form wx:if="{{detail.type==2}}" bindsubmit="save">
+  <view class="container">
+    <view class="edit_tit">单位发票抬头</view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-name.png"></image>
+        <text>名称</text>
+      </view>
+      <input value="{{detail.name}}" name="name" placeholder="单位名称（必填项）" /> 
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-num.png"></image>
+        <text>税号</text>
+      </view>
+      <input value="{{detail.taxNum}}" name="taxNum" type="text" maxlength="20" placeholder="15-20位" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-address.png"></image>
+        <text>单位地址</text>
+      </view>
+      <input value="{{detail.address}}" name="address" placeholder="单位地址信息" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-phone.png"></image>
+        <text>电话号码</text>
+      </view>
+      <input value="{{detail.phone}}" name="phone" type="number" maxlength="11" placeholder="电话号码" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-bank.png"></image>
+        <text>开户银行</text>
+      </view>
+      <input value="{{detail.bank}}" name="bank" placeholder="开户银行名称" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-banknum.png"></image>
+        <text>银行账号</text>
+      </view>
+      <input value="{{detail.bankAccount}}" maxlength="28" name="bankAccount" type="number" placeholder="银行账户号码" />
+    </view>
+    <view class="save">
+      <label>
+        <image src="/images/icon-save.png"></image>
+        <button form-type="submit" class="btn-text" hover-class="none">保存</button>
+      </label>   
+    </view>
+  </view>
+</form>
+<form wx:if="{{detail.type==1}}" bindsubmit="save">
+  <view class="container">
+    <view class="edit_tit">个人发票抬头</view>
+    <view class="rise-item">
+      <view class="name-tit">
+        <image src="/images/icon-name.png"></image>
+        <text>名称</text>
+      </view>
+      <input value="{{detail.name}}" name="name" placeholder="姓名（必填项）" /> 
+    </view>
+    <view class="save">
+      <label>
+        <image src="/images/icon-save.png"></image>
+        <button form-type="submit" class="btn-text" hover-class="none">保存</button>
+      </label>   
+    </view>
+  </view>
+</form>
+

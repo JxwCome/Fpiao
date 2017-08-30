@@ -1,0 +1,68 @@
+.card-group {
+  width: 720rpx;
+  margin-left: 30rpx;
+  height: 135rpx;
+  position: relative;
+}
+.delete {
+  width: 120rpx;
+  position: absolute;
+  color: #fff;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 2;
+  height: 135rpx;
+  line-height: 135rpx;
+  background-color: #ff3b30;
+}
+.group-up {
+  width: 720rpx;
+  height: 135rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  box-sizing: border-box;
+
+}
+.group-up-title{
+  width: 690rpx;
+  height: 135rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1rpx solid #ddd;
+  box-sizing: border-box;
+}
+.group-up .name {
+  color: #333333;
+  margin-bottom: 14rpx;
+  overflow: hidden;
+  width: 100%;
+  white-space:nowrap;  
+}
+
+.group-up .time {
+  color: #999;
+} 
+
+.add-invoice {
+  width: 690rpx;
+  margin: 30rpx auto 0;
+  padding-bottom: 60rpx;
+  height: 32rpx;
+  line-height: 23rpx;
+  
+}
+.add-invoice .icon-add {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.icon-right  {
+  width: 16rpx;
+  height: 26rpx;
+  float: right;
+}

@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="detail-tit">
+    点击右上角转发可将抬头分享给同事
+  </view>
+  <view class="detail-item">
+    <view class="dtname-tit">
+      <image src="/images/icon-name.png"></image>
+      <text>抬头</text>
+    </view>
+    <text class="detail-name maxlen">{{detail.name}}</text>
+  </view>
+  <view class="detail-item">
+    <view class="dtname-tit">
+      <image src="/images/icon-type.png"></image>
+      <text>类型</text>
+    </view>
+    <text>{{detail.type==1?"个人":"单位"}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.taxNum}}">
+    <view class="dtname-tit">
+      <image src="/images/icon-num.png"></image>
+      <text>税号</text>
+    </view>
+    <text class="maxlen">{{detail.taxNum}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.address}}">
+    <view class="dtname-tit">
+      <image src="/images/icon-address.png"></image>
+      <text>单位地址</text>
+    </view>
+    <text class="maxlen">{{detail.address}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.phone}}">
+    <view class="dtname-tit">
+      <image src="/images/icon-phone.png"></image>
+      <text>电话号码</text>
+    </view>
+    <text class="maxlen">{{detail.phone}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.bank}}">
+    <view class="dtname-tit">
+      <image src="/images/icon-bank.png"></image>
+      <text>开户银行</text>
+    </view>
+    <text class="maxlen">{{detail.bank}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.bankAccount}}">
+    <view class="dtname-tit">
+      <image src="/images/icon-banknum.png"></image>
+      <text>银行账户</text>
+    </view>
+    <text class="maxlen">{{detail.bankAccount}}</text>
+  </view>
+  <navigator url="/pages/edit_invoice/edit_invoice?type={{detail.type}}&id={{detail.id}}&name={{detail.name}}&taxNum={{detail.taxNum}}&address={{detail.address}}&phone={{detail.phone}}&bank={{detail.bank}}&bankAccount={{detail.bankAccount}}" hover-class="none" class="save">
+    <image src="/images/icon-edit.png"></image>
+    <view class="btn-text">编辑</view>
+  </navigator>
+</view>

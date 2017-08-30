@@ -1,0 +1,39 @@
+// edit_invoice.js
+Page({
+
+
+  data: {
+    detail: {
+      "name": "测试44444",
+      "taxNum": null,
+      "type": 1
+    }
+  },
+  onLoad: function (options) {
+    console.log(options);
+    this.setData({
+      detail: options
+    })
+  },
+  save:function(e){
+    console.log(e);
+    var data=e.detail.value;
+    if(!data.name){
+      wx.showModal({
+        title: '提示',
+        content: '姓名或单位名称不能为空!',
+        showCancel: false
+      });
+      return;
+    };
+    if(data.taxNum){
+      if(data.taxNum.length<15){
+        wx.showModal({
+          title: '提示',
+          content: '税号应为15-20位数字或字母!',
+          showCancel: false
+        });
+      }
+    }
+  }
+})

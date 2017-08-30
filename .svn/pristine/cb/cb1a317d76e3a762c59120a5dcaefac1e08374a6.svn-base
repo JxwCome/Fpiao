@@ -1,0 +1,16 @@
+<block wx:for="{{invoice}}">
+  <view class="card-group" >
+    <view class="delete" catchtap="delete" data-id="{{item.id}}">删除</view>
+    <navigator url="/pages/invoice_detail/invoice_detail?type={{item.type}}&id={{item.id}}" style="{{item.txtStyle}}" data-index="{{index}}" data-id="{{item.id}}" hover-class="none" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtap="edit" class="group-up">
+      <view class="group-up-title">
+        <text class="name">{{item.name}}</text>
+        <text class="time">{{item.type==1?"个人":"单位"}}</text>
+      </view>
+    </navigator>
+  </view>
+</block>
+<navigator url="/pages/add_invoice/add_invoice" hover-class="none" class="add-invoice">
+  <image src="/images/add.png" class="icon-add"></image>
+  <text class="add-name">添加发票抬头</text>
+  <image src="/images/right.png" class="icon-right"></image>
+</navigator>

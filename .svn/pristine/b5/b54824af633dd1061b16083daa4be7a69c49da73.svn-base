@@ -1,0 +1,18 @@
+.edit_tit {
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.rise-item {
+  height: 88rpx;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  align-items: center;
+}
+.name-tit {
+  width: 195rpx;
+}
+.rise-item input {
+  width: 392rpx;
+}

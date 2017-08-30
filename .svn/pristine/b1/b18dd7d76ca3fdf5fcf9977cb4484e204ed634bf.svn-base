@@ -1,0 +1,94 @@
+<view class="rise-type">
+  <image src="/images/icon-head.png"></image>
+  <text>抬头类型</text>
+  <block wx:for="{{typeTit}}">
+    <view class="type-tit {{index==select?'selected':''}}" data-index="{{index}}" bindtap="SelectType">
+      {{item}}
+    </view>
+  </block>
+</view>
+<form class="rise-box" wx:if="{{!select}}" bindsubmit="addSave"> 
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-name.png"></image>
+      <text>名称</text>
+    </view>
+    <input placeholder="姓名（必填项）" value="{{person.name}}" name="name" />
+    <view class="select-rise" bindtap="SelectRise">选抬头</view>
+  </view>
+  <view class="save">
+    <label>
+      <image src="/images/icon-save.png"></image>
+      <button form-type="submit" class="btn-text" hover-class="none">保存</button>
+    </label>   
+  </view>
+</form>
+<form class="rise-box" bindsubmit="addSave" wx:else> 
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-name.png"></image>
+      <text>名称</text>
+    </view>
+    <input placeholder="单位名称（必填项）" value="{{detail.name}}" name="name" />
+    <view class="select-rise" bindtap="SelectRise">选抬头</view>
+  </view>
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-num.png"></image>
+      <text>税号</text>
+    </view>
+    <input type="text" maxlength="20" value="{{detail.taxNum}}" name="taxNum" placeholder="15-20位" />
+  </view>
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-address.png"></image>
+      <text>单位地址</text>
+    </view>
+    <input placeholder="单位地址信息" value="{{detail.address}}" name="address" />
+  </view>
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-phone.png"></image>
+      <text>电话号码</text>
+    </view>
+    <input type="number" maxlength="11" value="{{detail.phone}}" name="phone" placeholder="电话号码" />
+  </view>
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-bank.png"></image>
+      <text>开户银行</text>
+    </view>
+    <input placeholder="开户银行名称" name="bank" value="{{detail.bank}}" />
+  </view>
+  <view class="rise-item">
+    <view class="name-tit">
+      <image src="/images/icon-banknum.png"></image>
+      <text>银行账号</text>
+    </view>
+    <input type="number" maxlength="28"  placeholder="银行账户号码" value="{{detail.nbankAccount}}" name="bankAccount" />
+  </view>
+  <view class="save">
+    <label>
+      <image src="/images/icon-save.png"></image>
+      <button form-type="submit" class="btn-text" hover-class="none">保存</button>
+    </label>   
+  </view>
+</form>
+
+<view class="popup {{close?'close':''}}">
+  <view class="popup-box">
+    <view class="popup-tit">
+     <image src="/images/cha.png" bindtap="Closed"></image>
+      <text>选择发票抬头</text>
+    </view>
+    <view class="popup-content" wx:if="{{invoice.length>0}}">
+      <view class="group-up-title" wx:for="{{invoice}}" data-id="{{item.id}}" bindtap="confirmInvoice">
+        <text class="name">{{item.name}}</text>
+        <text class="time">{{item.type==1?"个人":"单位"}}</text>
+      </view>
+    </view>
+    <view class="popup-content" wx:else>
+      <view class="no-tit">暂无发票抬头</view>
+    </view>
+  </view>
+</view>

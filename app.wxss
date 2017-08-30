@@ -1,0 +1,49 @@
+/**app.wxss**/
+.container {
+  width: 690rpx;
+  margin: auto;
+}
+page {
+  font-family: PingFang;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.save {
+  width: 150rpx;
+  margin: 100rpx auto 0;
+}
+.save image {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+/* 保存等按钮 */
+.save .btn-text {
+  background-color: #fff;
+  border: none;
+  color: #e15150;
+   line-height: 100%; 
+  margin-top: 20rpx;
+  text-align: center;
+}
+.save button::after {
+  content: none;
+}
+
+/* 详情里icon */
+.dtname-tit {
+  width: 229rpx;
+}
+.dtname-tit image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.dtname-tit text {
+  vertical-align: middle;
+}
+
+/* 新增里icon */

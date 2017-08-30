@@ -1,0 +1,20 @@
+/**app.wxss**/
+.container {
+  width: 690rpx;
+  margin: auto;
+}
+page {
+  font-family: PingFang;
+  font-size: 34rpx;
+  color: #333;
+}
+page .save {
+  border-radius: 10rpx;
+  text-align: center;
+  width: 690rpx;
+  margin-top: 60rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #54b548;
+  color: #fff;
+}

@@ -1,0 +1,24 @@
+.detail-tit {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+  border-bottom: 1rpx solid #ddd;
+} 
+.detail-item {
+  min-height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 26rpx;
+}
+.detail-item .maxlen {
+  display: block;
+  max-width: 520rpx;
+  word-wrap : break-word;
+}
+.detail-item .detail-name {
+  font-size: 34rpx;
+}

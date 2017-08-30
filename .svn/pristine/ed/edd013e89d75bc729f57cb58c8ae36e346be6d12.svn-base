@@ -1,0 +1,52 @@
+var constract = require('../../utils/constract.js');
+var app=getApp();
+Page({
+
+  data: {
+  },
+  onLoad: function (options) {
+    console.log(options);
+    this.setData({
+      id:options.id
+    })
+  },
+  onShow: function () {
+    var that=this;
+    var id = this.data.id;
+    console.log(id);
+    if (wx.showLoading) {
+      wx.showLoading();
+    };
+    app.Verification(function(token){
+      wx.request({
+        url: constract.saveInvoiceByShare,
+        header:{token:token},
+        data: {oldId:id },
+        success: function (res) {
+          console.log(res);
+          wx.request({
+            url: constract.findInvoiceById,
+            header:{token:token},
+            data:{id:res.data.data.id},
+            success:function(res){
+              if (wx.hideLoading) {
+                wx.hideLoading();
+              };
+              that.setData({
+                detail:res.data.data
+              })
+            }
+          })
+        }
+      })
+    })
+  },
+  onShareAppMessage:function(res){
+    var id=this.detail.id;
+    return {
+      title: '发票帮手',
+      path: '/page/invoice_detail/invoice_detail?id='+id
+  
+    }
+  }
+})

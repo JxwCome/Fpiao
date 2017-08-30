@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="detail-tit">
+    点击右上角转发可将抬头分享给同事
+  </view>
+  <view class="detail-item">
+    <text>抬头</text>
+    <text class="detail-name">{{detail.name}}</text>
+  </view>
+  <view class="detail-item">
+    <text>类型</text>
+    <text>{{detail.type==1?"个人":"单位"}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.taxNum}}">
+    <text>税号</text>
+    <text>{{detail.taxNum}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.address}}">
+    <text>单位地址</text>
+    <text>{{detail.address}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.phone}}">
+    <text>电话号码</text>
+    <text>{{detail.phone}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.bank}}">
+    <text>开户银行</text>
+    <text>{{detail.bank}}</text>
+  </view>
+  <view class="detail-item" wx:if="{{detail.bankAccount}}">
+    <text>银行账户</text>
+    <text>{{detail.bankAccount}}</text>
+  </view>
+  <navigator url="/pages/edit_invoice/edit_invoice?type={{detail.type}}&id={{detail.id}}&name={{detail.name}}&taxNum={{detail.taxNum}}&address={{detail.address}}&phone={{detail.phone}}&bank={{detail.bank}}&bankAccount={{detail.bankAccount}}" hover-class="none" class="save">编辑</navigator>
+</view>

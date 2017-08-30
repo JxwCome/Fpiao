@@ -1,0 +1,41 @@
+<form wx:if="{{detail.type==2}}" bindsubmit="save">
+  <view class="container">
+    <view class="edit_tit">单位发票抬头</view>
+    <view class="rise-item">
+      <view class="name-tit">名称</view>
+      <input value="{{detail.name}}" name="name" placeholder="单位名称（必填项）" /> 
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">税号</view>
+      <input value="{{detail.taxNum}}" name="taxNum" type="number" maxlength="20" placeholder="15-20位" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">单位地址</view>
+      <input value="{{detail.address}}" name="address" placeholder="单位地址信息" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">电话号码</view>
+      <input value="{{detail.phone}}" name="phone" type="number" maxlength="11" placeholder="电话号码" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">开户银行</view>
+      <input value="{{detail.bank}}" name="bank" placeholder="开户银行名称" />
+    </view>
+    <view class="rise-item">
+      <view class="name-tit">银行账号</view>
+      <input value="{{detail.bankAccount}}" name="bankAccount" type="number" placeholder="银行账户号码" />
+    </view>
+    <button type="primary"  class="save" form-type="submit">保存</button>
+  </view>
+</form>
+<form wx:if="{{detail.type==1}}" bindsubmit="save">
+  <view class="container">
+    <view class="edit_tit">个人发票抬头</view>
+    <view class="rise-item">
+      <view class="name-tit">名称</view>
+      <input value="{{detail.name}}" name="name" placeholder="姓名（必填项）" /> 
+    </view>
+    <button type="primary" class="save" form-type="submit">保存</button>
+  </view>
+</form>
+
